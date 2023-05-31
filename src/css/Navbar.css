@@ -1,0 +1,11 @@
+#navbar-main{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#navbar-main *{
+    margin-right: 25px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

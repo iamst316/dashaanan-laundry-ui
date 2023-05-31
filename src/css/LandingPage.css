@@ -1,0 +1,50 @@
+#titles{
+    /* border: 2px solid red; */
+    height: 50vh;
+    padding: 8.2rem;
+}
+#titles h1{
+    text-align: center;
+}
+
+#static-title{
+    font-size: 5.4rem;
+}
+
+#dynamic-title{
+    font-size: 6.4rem;
+}
+
+/* #dynamic-title:hover{
+    
+} */
+
+#about-us, #join-main{
+    /* border: 2px solid red; */
+    height: 50vh;
+    padding: 8.2rem;
+}
+#about-title, #join-title{
+    text-align: center;
+    font-size: 5.4rem;
+    margin-bottom: 1.5rem;
+}
+
+#about-body{
+    text-align: center;
+}
+
+#join-btn{
+    width: 16.5rem;
+    height: auto;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-right: 2.5rem;
+    position: relative;
+    left: 17rem;
+    top: 4rem;
+}
+
+#join-btn:hover{
+    
+}
