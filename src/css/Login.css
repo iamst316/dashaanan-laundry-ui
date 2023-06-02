@@ -1,0 +1,11 @@
+#login-main{
+    display: flex;
+}
+
+#login-area{
+    border: 2px solid red;
+    width:50%;
+    position: absolute;
+    padding: 5rem;
+
+}

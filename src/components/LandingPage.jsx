@@ -1,7 +1,10 @@
 import '../css/LandingPage.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import { useNavigate } from 'react-router-dom'
+
 export default function(){
+    const navigate = useNavigate();
 
     return(<div id='landing-main'>
         <Navbar />
@@ -20,8 +23,8 @@ export default function(){
         </div>
         <div id="join-main">
             <h1 id="join-title">Join Us</h1>
-            <button id="join-btn">Login</button>
-            <button id="join-btn">Register</button>
+            <button onClick={()=>navigate("/login")} id="join-btn">Login</button>
+            <button onClick={()=>navigate("/register")}  id="join-btn">Register</button>
         </div>
         <Footer />
     </div>)
