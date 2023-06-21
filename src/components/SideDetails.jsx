@@ -1,4 +1,4 @@
-
+import '../css/SideDetails.css'
 
 export default function(){
 

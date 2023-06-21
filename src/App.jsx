@@ -4,8 +4,10 @@ import LandingPage from './components/LandingPage'
 import Login from './components/Login'
 import Careers from './components/Careers'
 import Register from './components/Register'
+import Orders from './components/Orders'
+import CreateOrder from './components/CreateOrder'
 function App() {
-  
+
   return (
     <BrowserRouter>
       <Routes>
@@ -13,6 +15,8 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/careers' element={<Careers />} />
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/new-order' element={<CreateOrder/>} />
 
       </Routes>
     </BrowserRouter>
