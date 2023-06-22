@@ -1,5 +1,4 @@
 import Navbar from "./Navbar"
-import SideDetails from './SideDetails'
 import '../css/Login.css'
 import Footer from './Footer'
 import { useNavigate } from "react-router-dom";
@@ -22,14 +21,15 @@ export default function() {
                 <form onSubmit={(e) => HandleSubmit(e)}>
                     <input type="email" placeholder="E-Mail" />
                     <input type="password" placeholder="Password" />
-                    <button>Login</button>
-                    <hr />
-                    <h4>Login with google option</h4>
+                    <button id="login-btn">Login</button>
+                    {/* <hr /> */}
                 </form>
+                <h4>Not a member? <button onClick={()=> navigate("/register")}>Register</button></h4>
+                <h4>Login with google option</h4>
+
             </div>
 
-            <SideDetails />
         </div>
-        <Footer />
+        <div id='login-footer'><Footer /></div>
     </div>)
 }

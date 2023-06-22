@@ -1,4 +1,4 @@
-#login-main{
+#register-main{
     border: 2px solid green;
     height: 35rem;
     margin: auto;
@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-#login-area{
+#register-area{
     border: 2px solid red;
     /* margin: auto; */
     width:50%;
@@ -18,18 +18,18 @@
 
 }
 
-form{
+#register-area>form{
     border: 2px solid slateblue;
-    display: flex;
+    display: grid;
     flex-direction: column;
     justify-content: space-between;
 }
 
-form>*{
+#register-area>form>*{
     height: 2.5rem;
 }
 
-#login-footer{
+#register-footer{
     border: 2px solid gold;
     position: relative;
     top: 33.3rem;
