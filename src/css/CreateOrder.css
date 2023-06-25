@@ -2,5 +2,35 @@
     border: 2px solid hotpink;
     position: absolute;
     left: 5rem;
-    /* bottom: 1vh; */
+    top: 2.5rem;
+    /* background-color: #fffadea1; */
 }
+
+#create-order-area{
+    border: 2px solid blue;
+
+}
+
+.item-img{
+    aspect-ratio: 1/1;
+    width: 3rem;
+}
+
+#item-row{
+    border: 2px dotted royalblue;
+    display: flex;
+    
+}
+#item-name{
+    font-size: 1rem;
+}
+#item-description{
+    font-size: .75rem;
+}
+
+/* #item-quant{
+    width: 5rem;
+    height: 1.25rem;
+    position: relative;
+    top: .5rem;
+} */
