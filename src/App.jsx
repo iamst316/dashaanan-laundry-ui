@@ -6,6 +6,7 @@ import Careers from './components/Careers'
 import Register from './components/Register'
 import Orders from './components/Orders'
 import CreateOrder from './components/CreateOrder'
+import Checkout from './components/Checkout'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/careers' element={<Careers />} />
         <Route path='/orders' element={<Orders />} />
         <Route path='/new-order' element={<CreateOrder/>} />
+        <Route path='/checkout' element={<Checkout />} />
 
       </Routes>
     </BrowserRouter>

@@ -1,13 +1,14 @@
 #create-order-main{
-    border: 2px solid hotpink;
+    /* border: 2px solid hotpink; */
     position: absolute;
     left: 5rem;
     top: 2.5rem;
     /* background-color: #fffadea1; */
+    /* margin-bottom: 2rem; */
 }
 
 #create-order-area{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 
 .item-img{
@@ -16,10 +17,12 @@
 }
 
 #item-row{
-    border: 2px dotted royalblue;
+    /* border: 2px solid  grey; */
+    box-shadow: -1px 1px 4px grey;
+    border-radius: 1rem;
     display: flex;
     margin-bottom: 1rem;
-    
+    /* align-items: center; */    
 }
 #item-name{
     font-size: 1rem;
@@ -36,6 +39,7 @@
     position: relative;
     top: 1rem;
     margin-left: 5rem;
+    text-align: center;
 }
 
 #wash-btns{
@@ -50,7 +54,7 @@
     margin-left: 1rem;
 }
 
-#item-price{
+#item-price,#item-total{
     /* border: 2px dotted dodgerblue; */
     height: fit-content;
     position: relative;
@@ -63,4 +67,27 @@
     border: 2px solid seagreen;
     height: fit-content;
     margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+#cancel-btn,#proceed-btn{
+    /* border: 1px solid aqua; */
+    padding: .5rem;
+    width: 5rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    position: relative;
+    left: 120vh;
+    bottom: 1.5rem;
+    font-weight: 700;
+}
+
+#proceed-btn{
+    background-color: seagreen;
+    color: aliceblue;
+}
+
+#cancel-btn{
+    background-color: rgb(250, 60, 60);
+    color: aliceblue;
 }

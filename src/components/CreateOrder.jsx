@@ -21,6 +21,7 @@ import uBleach from '../assets/img/wash-btn/unselected/bleach.svg'
 //images-end
 
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function() {
   const [products, setProducts] = useState([])
@@ -31,10 +32,14 @@ export default function() {
   const [isIron, setIron] = useState([false,false,false,false,false,false]);
   const [isTowel, setTowel] = useState([false,false,false,false,false,false]);
   const [isBleach, setBleach] = useState([false,false,false,false,false,false]);
-
+  const [cancelShowBtn, setToggle] = useState([false,false,false,false,false,false])
   const [addOnPrice, setAddOn] = useState([0,0,0,0,0,0])
-  
+  const [totalPrice, setTotalPrice] = useState([0,0,0,0,0,0])
+  const [itemSummary, setItemSummary] = useState([])
+  const [billTotal, setBillTotal] = useState(0)
 
+  const navigate = useNavigate()
+  //Side Effects
   useEffect(()=>{
     fetch("http://localhost:5000/products")
     .then(res=>res.json())
@@ -43,7 +48,14 @@ export default function() {
     })
     
   },[])
+  useEffect(()=>{
+    console.log(itemSummary)
+  },[itemSummary])
+  useEffect(()=>{
+    console.log(billTotal)
+  },[billTotal])
   // console.log(products);
+  //side effects end
 
   function ToggleWash(idx){
     setWash([
@@ -76,8 +88,47 @@ export default function() {
       ...isTowel.slice(idx+1,6)
     ])
   }
-  function AddItem(id){
+  function AddItem(idx){
+    let itemEntry = {};
+    itemEntry.name = products[idx].productName
+    itemEntry.total = (products[idx].price+addOnPrice[idx])*quantArr[idx]
+    itemEntry.addOn = [isWash[idx],isIron[idx],isBleach[idx],isTowel[idx]]//code - wibt
+    itemEntry.quantity = quantArr[idx]
+    itemEntry.price = products[idx].price + addOnPrice[idx]
+    setBillTotal(billTotal=>billTotal+itemEntry.total)
+    setItemSummary([
+      ...itemSummary,
+      itemEntry
+    ])
+    setToggle([
+      ...cancelShowBtn.slice(0,idx),
+      !cancelShowBtn[idx],
+      ...cancelShowBtn.slice(idx+1,6)
+    ])
+    
+    // alert('Item Added To Cart')
+  }
 
+  function RemoveItem(idx){
+    for (let i=0;i<itemSummary.length;i++){
+      if (itemSummary[i].name==products[idx].productName){
+        setItemSummary([
+          ...itemSummary.slice(0,i),
+          ...itemSummary.slice(i+1,6)
+        ])
+        setBillTotal(billTotal=>billTotal-itemSummary[i].total)
+        
+        break
+      }
+    }
+    setToggle([
+      ...cancelShowBtn.slice(0,idx),
+      !cancelShowBtn[idx],
+      ...cancelShowBtn.slice(idx+1,6)
+    ])
+  }
+  function CheckOut(){
+    navigate("/checkout")
   }
 
   return (
@@ -141,11 +192,19 @@ export default function() {
                   }}/>
                 }
               </span>
+
               <p id="item-price">Rs. {item.price+addOnPrice[item.iconurl]}</p>
-              <button onClick={()=>AddItem(item.iconurl)} id="add-item-btn">Add</button>
+              <p id="item-total">Rs. {(item.price+addOnPrice[item.iconurl])*quantArr[item.iconurl]}</p>
+
+              {!cancelShowBtn[item.iconurl] ?
+                <button onClick={()=>AddItem(item.iconurl)} id="add-item-btn">Add</button> :
+                <button onClick={()=>RemoveItem(item.iconurl)} id="add-item-btn">Remove</button>
+              }
             </div>
           })}
         </div>
+        <button onClick={()=>window.location.reload()} id='cancel-btn'>Cancel</button>
+        <button onClick={CheckOut} id='proceed-btn'>Proceed</button>
       </div>
       <Footer />
     </>
