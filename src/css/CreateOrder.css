@@ -8,7 +8,6 @@
 
 #create-order-area{
     border: 2px solid blue;
-
 }
 
 .item-img{
@@ -19,6 +18,7 @@
 #item-row{
     border: 2px dotted royalblue;
     display: flex;
+    margin-bottom: 1rem;
     
 }
 #item-name{
@@ -26,11 +26,41 @@
 }
 #item-description{
     font-size: .75rem;
+    /* border: 2px solid red; */
+    max-width: 6rem;
 }
 
-/* #item-quant{
+#item-quant{
     width: 5rem;
     height: 1.25rem;
     position: relative;
-    top: .5rem;
-} */
+    top: 1rem;
+    margin-left: 5rem;
+}
+
+#wash-btns{
+    position: relative;
+    top: .75rem;
+    margin-left: 4rem;
+}
+
+#wash-btns>img{
+    aspect-ratio: 1/1;
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+#item-price{
+    /* border: 2px dotted dodgerblue; */
+    height: fit-content;
+    position: relative;
+    top: .75rem;
+    margin-left: 4rem;
+    min-width: 5rem;
+}
+
+#add-item-btn{
+    border: 2px solid seagreen;
+    height: fit-content;
+    margin-left: 2rem;
+}
