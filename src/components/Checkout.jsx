@@ -6,9 +6,10 @@ import "../css/Checkout.css";
 
 export default function() {
     const [stores, setStore] = useState([]);
-    const [selectedStore, setSelected] = useState({});
+    const [selectedStore, setSelected] = useState({delivery_charges:0});
     const [finalOrder, setFinalOrder] = useState({});
     const [subtotal, setSubTotal] = useState(0);
+    const [grandTotal, setGrandTotal] = useState(0);
     const [sample, setSample] = useState([
         {
             name: "jeans",
@@ -33,7 +34,19 @@ export default function() {
             .then((data) => {
                 setStore(data);
             });
+        let sum=0;
+        for(let i of sample){
+            sum+=i.total;
+    
+        }
+        setSubTotal(sum)
+        
     }, []);
+    useEffect(()=>{
+        let total = subtotal+selectedStore.delivery_charges
+        setGrandTotal(total)
+    },[selectedStore])
+    // console.log(subtotal,grandTotal,selectedStore.delivery_charges, typeof(selectedStore.delivery_charges))
 
     return (
         <>
@@ -56,12 +69,38 @@ export default function() {
                         })}
                     </select>
                     <h3 id="sub-title">Order Details</h3>
-                    <h3 id="subtotal">Subtotal: </h3>
-                    <h3 id="subtotal-value">
+                    <div id="order-details">
+                        <div id="detail-title-row">
+                            <div>Item Name</div>
+                            <div>Wash Types</div>
+                            <div>Price</div>
+                            <div>Quantity</div>
+                            <div>Final Price</div>
+                        </div>
+                        {sample.map((row)=>{
+                            return <div id="row">
+                                <p id="item-name">{row.name}</p>
+                                <div id="wash-options">
+                                    {row.addOn[0] && <p>Washing </p> }
+                                    {row.addOn[1] && <p>Ironing </p> }
+                                    {row.addOn[2] && <p>Bleaching </p> }
+                                    {row.addOn[3] && <p>Crisp Fold</p> }
+                                </div>
+                                <p id="price">{row.price}</p>
+                                <p id="quantity">{row.quantity}</p>
+                                <p id="total">{row.total}</p>
+                            </div>
+                        })}
+                    </div>
+                    <h3 id="subtotal">Subtotal: <p id="subtotal-value">
                         Rs. {subtotal}
-                    </h3>
-                    <h3 id="delivery">Delivery Charges: </h3>
-                    <h3 id="delivery-value">Rs. {selectedStore.delivery_charges}</h3>
+                    </p></h3>
+                    
+                    <h3 id="delivery">Delivery Charges: <p id="delivery-value">Rs. {selectedStore.delivery_charges}</p></h3>
+                    
+                    <h3 id="grand-total">Grand Total: <p id="grand-value">Rs. {grandTotal}</p></h3>
+                    
+                    <div id="address"></div>
                     <button>Place Order</button>
                 </div>
             </div>

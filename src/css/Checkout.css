@@ -1,0 +1,54 @@
+#checkout-main{
+    border: 2px solid saddlebrown;
+    position: absolute;
+    left: 5rem;
+    /* bottom: 5vh; */
+    /* margin: auto; */
+    min-width: 80%;
+}
+
+#checkout-title{
+    border: 2px dotted lawngreen;
+    font-size: 3.5rem;
+    
+}
+
+select{
+    width: 35%;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: .4rem;
+    background-color: white;
+}
+option{
+    font-size: 1.5rem;
+    text-align: center;
+}
+#sub-title{
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+#order-details{
+    border: 2px solid seagreen;
+
+}
+#detail-title-row{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-around;
+}
+#detail-title-row>*{
+    font-weight: 700;
+}
+#row{
+    border: 2px dotted green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#row>#item-name,#row>#total{
+    font-weight: 700;
+}
+#wash-options>p{
+    text-align: center;
+}
