@@ -2,7 +2,7 @@
     border: 2px solid saddlebrown;
     position: absolute;
     left: 5rem;
-    /* bottom: 5vh; */
+    bottom: 35vh;
     /* margin: auto; */
     min-width: 80%;
 }
@@ -43,6 +43,7 @@ option{
 #row{
     border: 2px dotted green;
     display: flex;
+    margin-top: 1rem;
     justify-content: space-around;
     align-items: center;
 }
@@ -51,4 +52,23 @@ option{
 }
 #wash-options>p{
     text-align: center;
+}
+#sub,#del,#grand{
+    display: flex;
+    /* align-items: flex-end; */
+    /* border: 2px solid blue; */
+    margin-top: 1rem;
+    width: fit-content;
+    /* float: right; */
+    position: relative;
+    /* right: 4rem; */
+}
+#sub{
+    left:131vh;
+}
+#del{
+    left:124vh;
+}
+#grand{
+    left:130vh;
 }
