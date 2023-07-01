@@ -32,7 +32,7 @@ export default function() {
                 <form onSubmit={(e) => HandleSubmit(e)}>
                     <input type="email" placeholder="E-Mail" onChange={(e)=> loginForm.email=e.target.value} />
                     <input type="password" placeholder="Password" onChange={(e)=> loginForm.password=e.target.value} />
-                    <button id="login-btn">Login</button>
+                    <button onClick={HandleSubmit} id="login-btn">Login</button>
                     {/* <hr /> */}
                 </form>
                 <h4>Not a member? <button onClick={()=> navigate("/register")}>Register</button></h4>
