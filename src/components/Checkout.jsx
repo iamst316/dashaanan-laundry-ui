@@ -3,29 +3,37 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SideNav from "./SideNav";
 import "../css/Checkout.css";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function() {
+    const navigate = useNavigate()
     const [stores, setStore] = useState([]);
     const [selectedStore, setSelected] = useState({ delivery_charges: 0 });
     const [finalOrder, setFinalOrder] = useState({});
     const [subtotal, setSubTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
-    const [sample, setSample] = useState([
-        {
-            name: "jeans",
-            total: 272,
-            addOn: [true, false, true, false],
-            quantity: "2",
-            price: 136,
-        },
-        {
-            name: "boxers",
-            total: 290,
-            addOn: [false, true, false, true],
-            quantity: "10",
-            price: 29,
-        },
-    ]);
+
+    const {currentOrder} = useSelector((state)=>state.order)
+    console.log(currentOrder)
+    // const [sample, setSample] = useState([
+    //     {
+    //         name: "jeans",
+    //         total: 272,
+    //         addOn: [true, false, true, false],
+    //         quantity: "2",
+    //         price: 136,
+    //     },
+    //     {
+    //         name: "boxers",
+    //         total: 290,
+    //         addOn: [false, true, false, true],
+    //         quantity: "10",
+    //         price: 29,
+    //     },
+    // ]);
+
+    // const [sample, setSample] = useState(currentOrder)
 
     useEffect(() => {
         fetch("http://localhost:5000/store")
@@ -34,7 +42,7 @@ export default function() {
                 setStore(data);
             });
         let sum = 0;
-        for (let i of sample) {
+        for (let i of currentOrder) {
             sum += i.total;
         }
         setSubTotal(sum);
@@ -74,7 +82,7 @@ export default function() {
                             <div>Quantity</div>
                             <div>Final Price</div>
                         </div>
-                        {sample.map((row) => {
+                        {currentOrder.map((row) => {
                             return (
                                 <div id="row">
                                     <p id="item-name">{row.name}</p>
@@ -106,7 +114,10 @@ export default function() {
                             Grand Total:
                         </h3><p id="grand-value">Rs. {grandTotal}</p></div>
 
-                    <div id="address"></div>
+                    <div id="address">
+                        {/* add addresses here */}
+                        <button onClick={()=> navigate("/add-address")}>+</button>
+                    </div>
                     <button>Place Order</button>
                 </div>
             </div >

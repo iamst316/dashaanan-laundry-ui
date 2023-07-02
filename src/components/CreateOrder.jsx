@@ -22,6 +22,8 @@ import uBleach from "../assets/img/wash-btn/unselected/bleach.svg";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import { checkoutOrder } from "../redux/slices/orderSlice";
 
 export default function() {
   const [products, setProducts] = useState([]);
@@ -162,9 +164,13 @@ export default function() {
       ...cancelShowBtn.slice(idx + 1, 6),
     ]);
   }
+  const dispatch = useDispatch()
+
   function CheckOut() {
+    dispatch(checkoutOrder(itemSummary))
     navigate("/checkout");
   }
+
 
   return (
     <>

@@ -9,6 +9,7 @@ import Register from './components/Register'
 import Orders from './components/Orders'
 import CreateOrder from './components/CreateOrder'
 import Checkout from './components/Checkout'
+import AddAddress from './components/AddAddress'
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/orders' element={<Orders />} />
           <Route path='/new-order' element={<CreateOrder/>} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/add-address' element={<AddAddress />} />
 
         </Routes>
       </Provider>

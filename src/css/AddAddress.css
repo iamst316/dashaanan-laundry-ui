@@ -1,0 +1,30 @@
+#form-main{
+    /* border: 2px solid hotpink; */
+    position: absolute;
+    bottom: 25vh;
+    left: 15rem;
+    display: flex;
+    flex-flow: column wrap;
+    width: 50%;
+}
+#form-main>*{
+    /* border: 2px solid orangered; */
+    font-size: 2rem;
+}
+
+#form-main>input,#form-main>p{
+    text-align: center;
+    height: 4rem;
+    margin-bottom: 1rem;
+
+}
+#form-main>input{
+    box-shadow: -1px 1px 4px grey;
+    border: 0;
+    border-radius: .5rem;
+}
+
+#form-main>button{
+    border-radius: .5rem;
+    border: 1px solid red;
+}
