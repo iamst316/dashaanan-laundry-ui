@@ -12,12 +12,14 @@ export default function() {
         e.preventDefault();
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json','Authorization': "Bearer " + auth, },
             body: JSON.stringify(loginForm)
         };
         fetch('http://localhost:5000/login', requestOptions)
-            .then(response => response.json())
-            console.log(registerForm)
+            .then(response => {
+                response.json()
+                console.log(response)
+            })
 
         navigate("/orders")
     }
@@ -27,7 +29,7 @@ export default function() {
 
         <div id="login-main">
             <div id="login-area">
-                <h1 id="login-title">Welcome back</h1>
+                <h1 id="login-title">Welcome back!</h1>
                 <h1 id="login-subtitle">Please enter your details.</h1>
                 <form onSubmit={(e) => HandleSubmit(e)}>
                     <input type="email" placeholder="E-Mail" onChange={(e)=> loginForm.email=e.target.value} />

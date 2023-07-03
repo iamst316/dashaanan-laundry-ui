@@ -118,7 +118,7 @@ export default function() {
                         {/* add addresses here */}
                         <button onClick={()=> navigate("/add-address")}>+</button>
                     </div>
-                    <button>Place Order</button>
+                    <button>Pay</button>
                 </div>
             </div >
             <Footer />
