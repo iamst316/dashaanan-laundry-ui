@@ -1,0 +1,36 @@
+#add-s-main{
+    background-color: crimson;
+    border-radius: .4rem;
+    display: flex;
+    margin: auto;
+    margin-top: 5vh;
+    width: fit-content;
+    flex-flow: column wrap;
+    padding: 2rem;
+}
+
+#add-s-main>input{
+    border: 1px solid red;
+    height: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+    padding: .25rem;
+    background-color: white;
+}
+#add-s-main>*{
+    border-radius: .5rem;
+    /* width: 150%; */
+}
+
+#add-s-main>button{
+    border: 1px solid red;
+    height: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    background-color: white;
+}
+#add-s-main>button:hover{
+    border: 1px solid green;
+    box-shadow: 1px 1px 4px yellow;
+    color: blueviolet;
+}
