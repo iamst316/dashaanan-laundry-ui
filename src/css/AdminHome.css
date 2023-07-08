@@ -1,0 +1,30 @@
+#admin-home-page{
+    background-color: rgba(0, 139, 139, 0.623);
+    border-radius: .4rem;
+    display: flex;
+    margin: auto;
+    margin-top: 20vh;
+    width: fit-content;
+    flex-flow: column wrap;
+    padding: 2rem;
+}
+#admin-home-page>button{
+    border: 1px solid red;
+    height: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    background-color: white;
+}
+#admin-title{
+    text-align: center;
+    /* border: 1px solid red; */
+    height: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    
+}
+#admin-home-page>button:hover{
+    border: 1px solid green;
+    box-shadow: 1px 1px 4px yellow;
+    color: blueviolet;
+}

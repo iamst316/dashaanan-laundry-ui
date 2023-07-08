@@ -10,6 +10,10 @@ import Orders from './components/Orders'
 import CreateOrder from './components/CreateOrder'
 import Checkout from './components/Checkout'
 import AddAddress from './components/AddAddress'
+import AdminHome from './components/AdminHome'
+import AdminLogin from './components/AdminLogin'
+import AddProduct from './components/AddProduct'
+import AddStore from './components/AddStore'
 function App() {
 
   return (
@@ -24,7 +28,10 @@ function App() {
           <Route path='/new-order' element={<CreateOrder/>} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/add-address' element={<AddAddress />} />
-
+          <Route path='/admin-home' element={<AdminHome />} />
+          <Route path='/admin-login' element={<AdminLogin />} />
+          <Route path='/add-product' element={<AddProduct />} />
+          <Route path='/add-store' element={<AddStore />} />
         </Routes>
       </Provider>
     </BrowserRouter>

@@ -1,0 +1,37 @@
+#admin-main{
+    background-color: rgba(0, 139, 139, 0.623);
+    border-radius: .4rem;
+    display: flex;
+    margin: auto;
+    margin-top: 20vh;
+    width: fit-content;
+    flex-flow: column wrap;
+    padding: 2rem;
+}
+
+#admin-main>*{
+    border-radius: .5rem;
+}
+#admin-main>input{
+    height: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    border: 1px solid white;
+    box-shadow: 1px 1px 4px purple;
+    margin: .5rem .1rem .5rem .1rem;
+
+}
+
+#admin-btn-login{
+    border: 1px solid red;
+    height: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    background-color: white;
+}
+
+#admin-btn-login:hover{
+    border: 1px solid green;
+    box-shadow: 1px 1px 4px yellow;
+    color: blueviolet;
+}
