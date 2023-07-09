@@ -1,9 +1,10 @@
 #add-s-main{
-    background-color: crimson;
+    background-color: gold;
     border-radius: .4rem;
     display: flex;
     margin: auto;
     margin-top: 5vh;
+    min-width: 30%;
     width: fit-content;
     flex-flow: column wrap;
     padding: 2rem;
@@ -11,6 +12,7 @@
 
 #add-s-main>input{
     border: 1px solid red;
+    margin-bottom: .2rem;
     height: 2.5rem;
     font-size: 1rem;
     text-align: center;
