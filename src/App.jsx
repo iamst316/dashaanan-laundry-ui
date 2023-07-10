@@ -14,6 +14,7 @@ import AdminHome from './components/AdminHome'
 import AdminLogin from './components/AdminLogin'
 import AddProduct from './components/AddProduct'
 import AddStore from './components/AddStore'
+import Test from './components/Test'
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
       <Provider store={store}>
         <Routes>
           <Route index element={<LandingPage />} />
+          <Route path='/test' element={<Test />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/careers' element={<Careers />} />
