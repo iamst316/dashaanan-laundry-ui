@@ -15,6 +15,7 @@ import AdminLogin from './components/AdminLogin'
 import AddProduct from './components/AddProduct'
 import AddStore from './components/AddStore'
 import Test from './components/Test'
+import PrivateRoute from './components/PrivateRoute'
 function App() {
 
   return (
@@ -26,14 +27,14 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/careers' element={<Careers />} />
-          <Route path='/orders' element={<Orders />} />
-          <Route path='/new-order' element={<CreateOrder/>} />
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path='/add-address' element={<AddAddress />} />
-          <Route path='/admin-home' element={<AdminHome />} />
+          <PrivateRoute path='/orders' component={Orders} />
+          <PrivateRoute path='/new-order' component={<CreateOrder/>} />
+          <PrivateRoute path='/checkout' component={<Checkout />} />
+          <PrivateRoute path='/add-address' component={<AddAddress />} />
+          <PrivateRoute path='/admin-home' component={<AdminHome />} />
           <Route path='/admin-login' element={<AdminLogin />} />
-          <Route path='/add-product' element={<AddProduct />} />
-          <Route path='/add-store' element={<AddStore />} />
+          <PrivateRoute path='/add-product' component={<AddProduct />} />
+          <PrivateRoute path='/add-store' component={<AddStore />} />
         </Routes>
       </Provider>
     </BrowserRouter>
