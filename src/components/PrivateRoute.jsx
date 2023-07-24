@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import { Route, redirect } from 'react-router-dom';
+import { Navigate, Outlet} from 'react-router-dom';
 import Login from './Login';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -7,14 +7,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const isAuthenticated = useState(localStorage.getItem('jwtToken'));
 
   return (
-    <Route
-      {...rest}
-      render={(props) =>
-        isAuthenticated ? <Component {...props} /> :
-        <Login />
-      }
-    />
-    // {isAuthenticated ? <Route {...rest} /> : < Login /> } 
+    auth ? <Outlet /> : <Navigate to="/login" />
   );
 };
 

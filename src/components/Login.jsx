@@ -10,17 +10,7 @@ export default function() {
     const navigate = useNavigate();
     function HandleSubmit(e) {
         e.preventDefault();
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json','Authorization': "Bearer " + auth, },
-            body: JSON.stringify(loginForm)
-        };
-        fetch('http://localhost:5000/login', requestOptions)
-            .then(response => {
-                response.json()
-                console.log(response)
-            })
-
+        
         navigate("/orders")
     }
 
