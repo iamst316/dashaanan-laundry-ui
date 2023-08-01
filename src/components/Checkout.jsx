@@ -36,7 +36,7 @@ export default function() {
     // const [sample, setSample] = useState(currentOrder)
 
     useEffect(() => {
-        fetch("http://localhost:5000/store")
+        fetch("http://localhost:4000/store")
             .then((res) => res.json())
             .then((data) => {
                 setStore(data);

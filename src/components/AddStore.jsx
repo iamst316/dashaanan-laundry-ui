@@ -14,7 +14,7 @@ export default function(){
             // headers: { 'Content-Type': 'application/json','Authorization': "Bearer " + auth, },
             body: JSON.stringify(newStore)
         };
-        fetch('http://localhost:5000/add-store', requestOptions)
+        fetch('http://localhost:4000/add-store', requestOptions)
             .then(response => {
                 response.json()
                 console.log(response)

@@ -3,7 +3,8 @@ import '../css/Register.css'
 import Footer from './Footer'
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
 export default function() {
     const navigate = useNavigate()
@@ -11,15 +12,24 @@ export default function() {
     function HandleSubmit(e) {
         e.preventDefault();
 
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(registerForm)
-        };
-        fetch('http://localhost:5000/register', requestOptions)
-            .then(response => response.json())
-            console.log(registerForm)
+        const apiUrl = 'http://localhost:4000/signup';
 
+        axios.post(apiUrl, registerForm,{withCredentials: true})
+        .then(response => {
+            console.log('Response:', response.data);
+            const myCookieValue = Cookies.get("token");
+            // console.log("COOKIE------>  ", myCookieValue);
+            localStorage.setItem("token",myCookieValue);
+            
+            // console.log("token------->",localStorage.getItem("token"))
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
+
+        // console.log("COOKIE--> ",document.cookie);
+
+        // console.log(registerForm)
         navigate("/orders")
     }
     useEffect(()=>{

@@ -85,7 +85,7 @@ export default function() {
   const navigate = useNavigate();
   //Side Effects
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("http://localhost:4000/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
