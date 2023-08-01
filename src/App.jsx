@@ -27,14 +27,14 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/careers' element={<Careers />} />
-          <PrivateRoute path='/orders' component={Orders} />
-          <PrivateRoute path='/new-order' component={<CreateOrder/>} />
-          <PrivateRoute path='/checkout' component={<Checkout />} />
-          <PrivateRoute path='/add-address' component={<AddAddress />} />
-          <PrivateRoute path='/admin-home' component={<AdminHome />} />
+          <Route path='/orders' element={< PrivateRoute Component={Orders} />} />
+          <Route path='/new-order' element={< PrivateRoute Component={CreateOrder} />} />
+          <Route path='/checkout' element={< PrivateRoute Component={Checkout} />} />
+          <Route path='/add-address' element={< PrivateRoute Component={AddAddress} />} />
+          <Route path='/admin-home' element={<AdminHome />} />
           <Route path='/admin-login' element={<AdminLogin />} />
-          <PrivateRoute path='/add-product' component={<AddProduct />} />
-          <PrivateRoute path='/add-store' component={<AddStore />} />
+          <Route path='/add-product' element={<AddProduct />} />
+          <Route path='/add-store' element={<AddStore />} />
         </Routes>
       </Provider>
     </BrowserRouter>
