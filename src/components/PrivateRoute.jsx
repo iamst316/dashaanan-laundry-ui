@@ -4,15 +4,16 @@ import { useNavigate } from "react-router-dom";
 const PrivateRoute = (props) => {
   const navigate = useNavigate();
   const {Component} = props;
-  useEffect(()=>{
-    const auth = localStorage.getItem("token");
-    // console.log("auth--->", auth);
-    
+  const auth = localStorage.getItem("token");
+  // console.log("auth--->", auth);
+
+  // useEffect(()=>{
+  
     if(!auth){
       navigate("/login");
     }
-
-  },[])
+    
+  // },[])
   
 
   return (

@@ -351,9 +351,12 @@ export default function() {
         <button onClick={() => window.location.reload()} id="cancel-btn">
           Cancel
         </button>
-        <button onClick={CheckOut} id="proceed-btn">
+        {billTotal>0 &&
+          <button onClick={CheckOut} id="proceed-btn">
           Proceed
         </button>
+        }
+        
       </div>
       <Footer />
     </>
