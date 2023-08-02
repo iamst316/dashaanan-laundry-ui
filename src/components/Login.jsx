@@ -3,7 +3,8 @@ import '../css/Login.css'
 import Footer from './Footer'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import axios from "axios";
+import Cookies from 'js-cookie';
 
 export default function() {
     const [loginForm,fillForm] = useState({});
@@ -11,6 +12,20 @@ export default function() {
     function HandleSubmit(e) {
         e.preventDefault();
         
+        const apiUrl = 'http://localhost:4000/login';
+
+        axios.post(apiUrl, loginForm, {withCredentials: true})
+        .then(response => {
+            console.log('Response:', response.data);
+            const myCookieValue = Cookies.get("token");
+            
+            // localStorage.setItem("token",myCookieValue);
+    
+        })
+        .catch(error => {
+            console.error('Error:', error.message);
+        });
+
         navigate("/orders")
     }
 
