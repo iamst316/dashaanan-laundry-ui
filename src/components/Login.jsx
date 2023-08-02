@@ -16,11 +16,11 @@ export default function() {
 
         axios.post(apiUrl, loginForm, {withCredentials: true})
         .then(response => {
-            console.log('Response:', response.data);
+            // console.log('Response:', response.data);
             const myCookieValue = Cookies.get("token");
-            
-            // localStorage.setItem("token",myCookieValue);
-    
+            // console.log('COOKIE--->',myCookieValue)
+            localStorage.setItem("token",myCookieValue);
+                        
         })
         .catch(error => {
             console.error('Error:', error.message);

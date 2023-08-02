@@ -89,7 +89,16 @@ export default function() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-      });
+      }
+    );
+
+    const interval = 30*60*1000;
+    const timer = setTimeout(() => {
+      localStorage.removeItem('token')
+      console.log('Item removed from localStorage.');
+    }, interval);
+
+
   }, []);
   useEffect(() => {
     console.log(itemSummary);

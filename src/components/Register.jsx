@@ -16,20 +16,15 @@ export default function() {
 
         axios.post(apiUrl, registerForm,{withCredentials: true})
         .then(response => {
-            console.log('Response:', response.data);
+            // console.log('Response:', response.data);
             const myCookieValue = Cookies.get("token");
-            // console.log("COOKIE------>  ", myCookieValue);
-            localStorage.setItem("token",myCookieValue);
             
-            // console.log("token------->",localStorage.getItem("token"))
+            localStorage.setItem("token",myCookieValue);            
         })
         .catch(error => {
             console.error('Error:', error.message);
         });
 
-        // console.log("COOKIE--> ",document.cookie);
-
-        // console.log(registerForm)
         navigate("/orders")
     }
     useEffect(()=>{
