@@ -8,10 +8,11 @@ export default function(){
         <div onClick={()=>navigate("/")} id="home-tab">Home</div>
         <div onClick={()=>navigate("/careers")}  id="career-tab">Careers</div>
         {localStorage.getItem("token") ?
-            <div onClick={()=>{
-                localStorage.removeItem("token")
-                navigate("/login")
-            }}  id="login-tab">Logout</div> : 
+            // <div onClick={()=>{
+            //     localStorage.removeItem("token")
+            //     navigate("/login")
+            // }}  id="login-tab">Logout</div> : 
+            <div onClick={()=> navigate("/profile")}>Profile</div>:
             <div onClick={()=>navigate("/login")}  id="login-tab">Login</div>
         }
     </div>)

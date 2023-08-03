@@ -330,7 +330,7 @@ export default function() {
                 </p>
 
                 {!cancelShowBtn[item.iconurl] ? (
-                  <button
+                  quantArr[item.iconurl]>0 && <button
                     onClick={() => AddItem(item.iconurl)}
                     id="add-item-btn"
                   >

@@ -2,13 +2,18 @@ import Navbar from "./Navbar"
 import '../css/Login.css'
 import Footer from './Footer'
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from 'js-cookie';
+import { useDispatch, useSelector } from "react-redux";
 
 export default function() {
     const [loginForm,fillForm] = useState({});
+    const [User, setUser] = useState({});
+    const loggedInUser = useSelector((state) => state.user.loggedInUser);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+
     function HandleSubmit(e) {
         e.preventDefault();
         
@@ -20,7 +25,16 @@ export default function() {
             const myCookieValue = Cookies.get("token");
             localStorage.setItem("token",myCookieValue);
             // console.log('COOKIE--->', localStorage.getItem("token"))
+            User.email = response.data.user.email;
+            User.name = response.data.user.name;
+            User.addresses = response.data.user.addresses;
+            User.orders = response.data.user.orders;
 
+            // console.log(response.data.user);
+            // console.log("I LOGGED IN -->  ",loggedInUser);
+            
+            dispatch(setUser(User));
+            console.log("1",loggedInUser);
         })
         .catch(error => {
             console.error('Error:', error.message);
@@ -28,6 +42,9 @@ export default function() {
 
         navigate("/orders")
     }
+    useEffect(()=>{
+
+    },[loggedInUser])
 
     return (<div>
         <Navbar />

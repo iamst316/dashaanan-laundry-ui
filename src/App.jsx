@@ -16,6 +16,7 @@ import AddProduct from './components/AddProduct'
 import AddStore from './components/AddStore'
 import Test from './components/Test'
 import PrivateRoute from './components/PrivateRoute'
+import Profile from './components/Profile'
 function App() {
 
   return (
@@ -35,6 +36,8 @@ function App() {
           <Route path='/admin-login' element={<AdminLogin />} />
           <Route path='/add-product' element={<AddProduct />} />
           <Route path='/add-store' element={<AddStore />} />
+          <Route path='/profile' element={<Profile />} />
+
         </Routes>
       </Provider>
     </BrowserRouter>
