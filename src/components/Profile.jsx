@@ -3,32 +3,29 @@ import Navbar from "./Navbar"
 import SideNav from "./SideNav"
 import "../css/Profile.css"
 import { useDispatch, useSelector } from "react-redux";
+import ProfileData from "./ProfileData";
 
 const Profile = () => {
-  const loggedInUser = useSelector((state) => state.user.loggedInUser);
+  const loggedInUser = useSelector((state) => state.user);
   console.log("IN Profile-->", loggedInUser);
   return (
     <div>
       <Navbar />
       <SideNav />
-            
+
       <div className="profile-main">
         {loggedInUser ? (
+          <ProfileData user={loggedInUser} />
+        ) : (
           <div>
-            <h2>User Profile</h2>
-            <p>Name: {loggedInUser.name}</p>
-            <p>Email: {loggedInUser.email}</p>
-            <p>Id: {loggedInUser.id}</p>
+            <h2 class="missing-info">Please log in to view your profile.</h2>
           </div>
-          ) : (
-          <div>
-            <p>Please log in to view your profile.</p>
-          </div>
-        )}
-      </div>
+        )
+        }
+      </div >
       <Footer />
 
-    </div>
+    </div >
   );
 };
 
