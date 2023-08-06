@@ -3,15 +3,15 @@
 export default function(props) {
   // const loggedInUser = useSelector((state) => state.user);
 
-  const { name, email, id, orders, addresses } = props.user;
+  const { name, email, addresses } = props.user;
 
   return (
     < div >
       <h2>User Profile</h2>
+      <h1>Hello, {name}!</h1>
       <button>Edit Profile</button>
       <p>Name: {name}</p>
       <p>Email: {email}</p>
-      <p>Id: {id}</p>
       <h2>User Addresses</h2>
       {addresses.length > 0 ? (
 
@@ -29,3 +29,4 @@ export default function(props) {
     </div >
   )
 }
+//needs /signup endpoint in the backend to set address for the user.
