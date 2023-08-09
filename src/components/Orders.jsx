@@ -24,10 +24,12 @@ export default function() {
       <SideNav />
       <div className='orders-main'>
         {loggedInUser ? (
-          loggedInUser.orders.map((order) => {
-            return <Order info={order} />
-          })) : (
-          <h2 className='missing-info'>No Orders Placed!</h2>
+          loggedInUser.orders.length > 0 ?
+            loggedInUser.orders.map((order) => {
+              return <Order info={order} />
+            }) : <h2 className='missing-info'>No Orders Placed!</h2>
+        ) : (
+          <h2 className='missing-info'>Please Login/Register to view your Orders</h2>
         )}
       </div>
       <Footer />

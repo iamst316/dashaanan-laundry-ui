@@ -3,8 +3,9 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SideNav from "./SideNav";
 import "../css/Checkout.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addOrder } from "../redux/slices/userSlice";
 
 export default function() {
     const navigate = useNavigate()
@@ -13,9 +14,9 @@ export default function() {
     const [finalOrder, setFinalOrder] = useState({});
     const [subtotal, setSubTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
+    const addresses = useSelector((state) => state.user.addresses)
 
-    const {currentOrder} = useSelector((state)=>state.order)
-    console.log(currentOrder)
+    // console.log(currentOrder)
     // const [sample, setSample] = useState([
     //     {
     //         name: "jeans",
@@ -115,10 +116,14 @@ export default function() {
                         </h3><p id="grand-value">Rs. {grandTotal}</p></div>
 
                     <div id="address">
+                        <h2>Choose An Address</h2>
+                        {addresses.map((entry) => {
+                            return <button>{entry.address}</button>
+                        })}
                         {/* add addresses here */}
-                        <button onClick={()=> navigate("/add-address")}>+</button>
+                        <button onClick={() => navigate("/add-address")}>+</button>
                     </div>
-                    <button>Pay</button>
+                    <button onClick={() => navigate("/payment")}>Pay</button>
                 </div>
             </div >
             <Footer />
