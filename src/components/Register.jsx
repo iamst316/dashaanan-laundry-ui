@@ -1,7 +1,7 @@
 import Navbar from "./Navbar"
 import '../css/Register.css'
 import Footer from './Footer'
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import axios from 'axios';

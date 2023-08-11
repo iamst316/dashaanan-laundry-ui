@@ -15,8 +15,8 @@ export default function() {
     const [subtotal, setSubTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
     const addresses = useSelector((state) => state.user.addresses)
-
-    // console.log(currentOrder)
+    const current = useSelector(state=>state.order)
+    console.log(current)
     // const [sample, setSample] = useState([
     //     {
     //         name: "jeans",
@@ -43,7 +43,7 @@ export default function() {
                 setStore(data);
             });
         let sum = 0;
-        for (let i of currentOrder) {
+        for (let i of current.currentOrder) {
             sum += i.total;
         }
         setSubTotal(sum);
@@ -83,7 +83,7 @@ export default function() {
                             <div>Quantity</div>
                             <div>Final Price</div>
                         </div>
-                        {currentOrder.map((row) => {
+                        {current.currentOrder.map((row) => {
                             return (
                                 <div id="row">
                                     <p id="item-name">{row.name}</p>
