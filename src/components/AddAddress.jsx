@@ -11,16 +11,19 @@ import axios from 'axios';
 export default function(){
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    // const loggedInUser = useSelector((state) => state.user);
+    const loggedInUser = useSelector((state) => state.user);
     const [addForm,setAddressForm] = useState({})
     function AddNew(e){
         e.preventDefault();
+        // console.log(loggedInUser.email)
+
+        addForm.email = loggedInUser.email;
 
         const apiUrl = 'http://localhost:4000/add-address';
 
         axios.patch(apiUrl, addForm, { withCredentials: true })
             .then(response => {
-                // dispatch(setUser(User));
+                dispatch(setUser(response.data.user));
                 console.log("res--->",response)
             })
             .catch(error => {

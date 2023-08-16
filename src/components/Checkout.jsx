@@ -6,35 +6,25 @@ import "../css/Checkout.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addOrder } from "../redux/slices/userSlice";
+import { setUser } from "../redux/slices/userSlice";
+
+import axios from "axios";
 
 export default function() {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
     const [stores, setStore] = useState([]);
+    const loggedInUser = useSelector((state) => state.user);
     const [selectedStore, setSelected] = useState({ delivery_charges: 0 });
     const [finalOrder, setFinalOrder] = useState({});
     const [subtotal, setSubTotal] = useState(0);
     const [grandTotal, setGrandTotal] = useState(0);
     const addresses = useSelector((state) => state.user.addresses)
     const current = useSelector(state=>state.order)
-    console.log(current)
-    // const [sample, setSample] = useState([
-    //     {
-    //         name: "jeans",
-    //         total: 272,
-    //         addOn: [true, false, true, false],
-    //         quantity: "2",
-    //         price: 136,
-    //     },
-    //     {
-    //         name: "boxers",
-    //         total: 290,
-    //         addOn: [false, true, false, true],
-    //         quantity: "10",
-    //         price: 29,
-    //     },
-    // ]);
+    
 
-    // const [sample, setSample] = useState(currentOrder)
+    console.log(current)
+    console.log("final: ",finalOrder)
 
     useEffect(() => {
         fetch("http://localhost:4000/store")
@@ -48,11 +38,34 @@ export default function() {
         }
         setSubTotal(sum);
     }, []);
+
     useEffect(() => {
         let total = subtotal + selectedStore.delivery_charges;
         setGrandTotal(total);
+        finalOrder.store = selectedStore;
+        finalOrder.billAmt = total;
+        finalOrder.items = current.currentOrder;
+        console.log(addresses)
     }, [selectedStore]);
-    // console.log(subtotal,grandTotal,selectedStore.delivery_charges, typeof(selectedStore.delivery_charges))
+    
+    function OrderFinally(e){
+        e.preventDefault();
+        finalOrder.email = loggedInUser.email;
+        finalOrder.orderStatus = "Not Delivered";
+        finalOrder.orderDate = new Date();
+        
+        const apiUrl = 'http://localhost:4000/order';
+
+        axios.patch(apiUrl, finalOrder, { withCredentials: true })
+            .then(response => {
+                dispatch(setUser(response.data.user));
+                console.log("res--->",response)
+            })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
+        navigate("/orders")
+    }
 
     return (
         <>
@@ -64,7 +77,7 @@ export default function() {
                     <select
                         onChange={(e) => {
                             setSelected(stores[e.target.value]);
-                            finalOrder.store = selectedStore;
+                            
                         }}
                     >
                         <option disabled selected value>
@@ -118,12 +131,15 @@ export default function() {
                     <div id="address">
                         <h2>Choose An Address</h2>
                         {addresses.map((entry) => {
-                            return <button>{entry.address}</button>
+                            return <button onClick={()=>{
+                                finalOrder.deliveryAddress = entry;
+                                console.log(finalOrder);
+                            }} >{entry.address}</button>
                         })}
                         {/* add addresses here */}
                         <button onClick={() => navigate("/add-address")}>+</button>
                     </div>
-                    <button onClick={() => navigate("/payment")}>Pay</button>
+                    <button onClick={OrderFinally}>Pay</button>
                 </div>
             </div >
             <Footer />
