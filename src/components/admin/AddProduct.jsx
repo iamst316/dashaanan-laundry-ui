@@ -1,6 +1,8 @@
-import '../css/AddProduct.css'
+import './AddProduct.css'
 import { useNavigate } from 'react-router-dom'
 import { useState,useEffect } from 'react'
+import axios from "axios";
+
 export default function(){
     const navigate = useNavigate()
     const [newItem, setItem]= useState({})
@@ -11,8 +13,8 @@ export default function(){
     useEffect(()=>{
     },[newItem])
 
-    function AddItem(){
-        // e.preventDefault()
+    function AddItem(e){
+        e.preventDefault();
         newItem.addOn = [
             {
                 type: 'wash',
@@ -35,16 +37,16 @@ export default function(){
                 status: false
             },
         ]
-        const requestOptions = {
-            method: 'POST',
-            // headers: { 'Content-Type': 'application/json','Authorization': "Bearer " + auth, },
-            body: JSON.stringify(newItem)
-        };
-        fetch('http://localhost:4000/add-store', requestOptions)
+        
+        const apiUrl = 'http://localhost:4000/add-product';
+
+        axios.post(apiUrl, newItem, { withCredentials: true })
             .then(response => {
-                response.json()
-                console.log(response)
+                console.log('Response:', response);
             })
+            .catch(error => {
+                console.error('Error:', error.message);
+            });
 
         navigate("/admin-home")
     }
@@ -60,7 +62,7 @@ export default function(){
             <input type="number" placeholder="Enter Price of Bleaching" onChange={(e)=>setBleach(e.target.value)} />
             <input type="number" placeholder="Enter Price of Crisp Folding" onChange={(e)=>setTowel(e.target.value)} />
 
-            <button onClick={()=>AddItem()}>Add Product</button>
+            <button onClick={AddItem}>Add Product</button>
         </div>
     )
 }

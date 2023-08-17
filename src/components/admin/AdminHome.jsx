@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom'
-import '../css/AdminHome.css'
+import './AdminHome.css'
 import { useState } from 'react'
 
 export default function(){
