@@ -18,6 +18,7 @@ import Test from './components/Test'
 import PrivateRoute from './components/PrivateRoute'
 import Profile from './components/Profile'
 import Payments from "./components/Payments"
+import AddJob from './components/admin/AddJob'
 function App() {
 
   return (
@@ -37,9 +38,9 @@ function App() {
           <Route path='/admin-login' element={<AdminLogin />} />
           <Route path='/add-product' element={<AddProduct />} />
           <Route path='/add-store' element={<AddStore />} />
+          <Route path='add-job' element={<PrivateRoute Component={AddJob} />} />
           <Route path='/profile' element={<PrivateRoute Component={Profile} />} />
           <Route path='/payment' element={<PrivateRoute Component={Payments} />} />
-
         </Routes>
       </Provider>
     </BrowserRouter>

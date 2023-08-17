@@ -12,11 +12,16 @@ export default function(){
         navigate("/add-store")
         
     }
+
+    function AddJob(){
+        navigate("/add-job")
+    }
     return(
         <div id="admin-home-page">
             <p id="admin-title">Welcome {admin.name}!</p>
             <button onClick={AddAProduct}>Add A Product</button>
             <button onClick={AddAStore}>Add A Delivery Store</button>
+            <button onClick={AddJob}>Add A Job Opening</button>
         </div>
     )
 }
