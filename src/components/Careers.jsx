@@ -1,5 +1,6 @@
 import Navbar from "./Navbar"
 import '../css/Careers.css'
+import JobTemp from "./JobTemp"
 import { useEffect, useState } from "react"
 // import axios from "axios";
 
@@ -19,7 +20,7 @@ export default function(){
                 <h1 id="careers-title">Work with us?</h1>
                 <div className="jobs">
                     {jobs.map((job)=>{
-                        return <h3>{job.title}</h3>
+                        return <JobTemp job={job} />
                     })}
                 </div>
             </div>
