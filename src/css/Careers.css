@@ -9,7 +9,20 @@
     font-size: 5.4rem;
 }
 
+.job-area{
+    border: 2px dotted purple;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.sub-title{
+    font-size: 3rem;
+    /* border: 2px solid red; */
+    text-align: center;
+}
+
 .jobs{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: .5rem .5rem;
 }
