@@ -1,0 +1,67 @@
+.bg{
+    background: linear-gradient(135deg, rgba(105,243,254,1) 0%, rgba(90,196,254,1) 25%, rgba(107,145,255,1) 50%, rgba(215,157,255,1) 75%, rgba(244,127,209,1) 100%);
+    box-shadow: 2px 2px 2px rgb(247, 186, 237);
+    /* border: 2px solid blue; */
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.job-card{
+    background-color: rgba(255, 236, 236, 0.932);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.job-desc{
+    display: flex;
+    /* border: 2px solid firebrick; */
+    justify-content: space-around;
+}
+
+.job-title{
+    font-weight: 700;
+    /* font-size: 1.2rem; */
+}
+
+.dep{
+    /* font-weight: */
+    /* font-size: .8rem; */
+}
+
+.other{
+    display: flex;
+    flex-flow: column wrap;
+}
+.pay{
+    display: flex;
+    /* align-items: baseline; */
+    margin-top: 1rem;
+}
+
+.pay>img{
+    width: 2rem;
+}
+
+.btns{
+    /* border: 2px dotted peru; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btns>button{
+    box-shadow: 2px 2px 2px rgb(105, 105, 105);
+    margin-right: .3rem;
+    padding: .35rem .75rem .35rem .75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.det-btn{
+    color: white;
+    background-color: rgb(39, 175, 73);
+}
+
+.apply-btn{
+    color: white;
+    background-color: rgb(39, 39, 175);
+}
