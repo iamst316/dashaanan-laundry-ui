@@ -1,6 +1,6 @@
 #create-order-main{
     /* border: 2px solid hotpink; */
-    position: absolute;
+    /*position: absolute;*/
     left: 5rem;
     top: 2.5rem;
     /* background-color: #fffadea1; */
@@ -36,14 +36,14 @@
 #item-quant{
     width: 5rem;
     height: 1.25rem;
-    position: relative;
+    /*position: relative;*/
     top: 1rem;
     margin-left: 5rem;
     text-align: center;
 }
 
 #wash-btns{
-    position: relative;
+    /*position: relative;*/
     top: .75rem;
     margin-left: 4rem;
 }
@@ -57,7 +57,7 @@
 #item-price,#item-total{
     /* border: 2px dotted dodgerblue; */
     height: fit-content;
-    position: relative;
+    /*position: relative;*/
     top: .75rem;
     margin-left: 4rem;
     min-width: 5rem;
@@ -76,7 +76,7 @@
     width: 5rem;
     border-radius: 1rem;
     margin-right: 1rem;
-    position: relative;
+    /*position: relative;*/
     left: 120vh;
     bottom: 1.5rem;
     font-weight: 700;

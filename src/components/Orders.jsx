@@ -20,8 +20,8 @@ export default function() {
   const loggedInUser = useSelector((state) => state.user);
   return (
     <>
-      <Navbar />
-      <SideNav />
+      {/* <Navbar />
+      <SideNav /> */}
       <div className='orders-main'>
         {loggedInUser ? (
           loggedInUser.orders.length > 0 ?
@@ -32,7 +32,7 @@ export default function() {
           <h2 className='missing-info'>Please Login/Register to view your Orders</h2>
         )}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

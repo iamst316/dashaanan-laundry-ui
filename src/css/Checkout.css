@@ -1,6 +1,6 @@
 #checkout-main{
     border: 2px solid saddlebrown;
-    position: absolute;
+    /*position: absolute;*/
     left: 5rem;
     bottom: 5vh;
     /* margin: auto; */
@@ -60,7 +60,7 @@ option{
     margin-top: 1rem;
     width: fit-content;
     /* float: right; */
-    position: relative;
+    /*position: relative;*/
     /* right: 4rem; */
 }
 #sub{

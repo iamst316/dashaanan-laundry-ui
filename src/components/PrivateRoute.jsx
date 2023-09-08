@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import SideNav from "./SideNav";
+import Footer from "./Footer";
 
 const PrivateRoute = (props) => {
   const navigate = useNavigate();
@@ -18,7 +21,10 @@ const PrivateRoute = (props) => {
 
   return (
     <>
+      <Navbar />
+      <SideNav />
       <Component />
+      <Footer />
     </>
   );
 };

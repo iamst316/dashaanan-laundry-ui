@@ -183,8 +183,8 @@ export default function() {
 
   return (
     <>
-      <Navbar />
-      <SideNav />
+      {/* <Navbar />
+      <SideNav /> */}
       <div id="create-order-main">
         <p id="create-title">Create Order</p>
         <p id="create-description">
@@ -358,7 +358,7 @@ export default function() {
         }
         
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

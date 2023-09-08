@@ -13,7 +13,7 @@
     border: 2px solid red;
     /* margin: auto; */
     width:50%;
-    position: absolute;
+    /*position: absolute;*/
     padding: 5rem;
 
 }
@@ -31,6 +31,6 @@
 
 #register-footer{
     border: 2px solid gold;
-    position: relative;
+    /*position: relative;*/
     top: 33.3rem;
 }

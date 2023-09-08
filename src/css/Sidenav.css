@@ -1,12 +1,14 @@
 #side-main{
     background-color: orange;
     display: flex;
-    flex-direction: column;
-    width: 3%;
+    /* flex-direction: column; */
+    /* width: 3%; */
     border: 2px solid red;
     padding: .5rem;
-    height: 90vh;
+    /* position: fixed; */
+    /* height: 90vh; */
     justify-content: space-around;
+    margin-top: .3rem;
 }
 
 button{
