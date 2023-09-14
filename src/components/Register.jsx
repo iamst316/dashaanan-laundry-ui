@@ -48,7 +48,7 @@ export default function() {
                     <input type="text" placeholder="Address" onChange={(e) => registerForm.address = e.target.value} />
                     <input type="text" placeholder="City" onChange={(e) => registerForm.city = e.target.value} />
                     <input type="text" placeholder="State" onChange={(e) => registerForm.state = e.target.value} />
-                    <button onClick={HandleSubmit} id="register-btn">Register</button>
+                    <button onClick={HandleSubmit} className="register-btn">Register</button>
                     {/* <hr /> */}
                 </form>
                 <h4>Already a member? <button onClick={() => navigate("/login")}>Login</button></h4>

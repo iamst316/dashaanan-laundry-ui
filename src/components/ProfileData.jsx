@@ -1,17 +1,18 @@
 // import { useDispatch, useSelector } from "react-redux";
 
+import sample from "../assets/img/profile/1.png"
+
 export default function(props) {
   // const loggedInUser = useSelector((state) => state.user);
 
   const { name, email, addresses } = props.user;
 
   return (
-    < div >
-      <h2>User Profile</h2>
+    < div className="pdata-main" >
+      
       <h1>Hello, {name}!</h1>
       <button>Edit Profile</button>
-      <p>Name: {name}</p>
-      <p>Email: {email}</p>
+      
       <h2>User Addresses</h2>
       {addresses.length > 0 ? (
 
@@ -26,6 +27,7 @@ export default function(props) {
         <h2 class="missing-info">No Addresses ADDED!!!</h2>
       )}
       <button>Logout</button>
+      <img className="test" src={sample} />
     </div >
   )
 }

@@ -14,15 +14,19 @@
     /* margin: auto; */
     width:50%;
     /*position: absolute;*/
-    padding: 5rem;
+    padding: 2.2rem;
 
 }
 
 #register-area>form{
     border: 2px solid slateblue;
     display: grid;
-    flex-direction: column;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    column-gap: .5rem;
+    row-gap: .75rem;
+    margin-top: .5rem;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
 }
 
 #register-area>form>*{
@@ -32,5 +36,19 @@
 #register-footer{
     border: 2px solid gold;
     /*position: relative;*/
-    top: 33.3rem;
+    /* top: 33.3rem; */
+}
+
+.register-btn{
+    border: 2px solid salmon;
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    transition: all 1s ease-in-out;
+}
+
+.register-btn:hover{
+    border-radius: 5rem;   
+    background-color: rgb(26, 228, 255); 
+    font-size: 1rem;
 }

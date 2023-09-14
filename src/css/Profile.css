@@ -1,0 +1,14 @@
+.profile-main{
+    border: 2px solid orange;
+    margin-top: 1rem;
+}
+
+.pdata-main{
+    border: 2px solid rgb(0, 255, 42);
+    /* margin-top: 1rem; */
+}
+
+.test{
+    width: 40rem;
+    aspect-ratio: 1/1;
+}
