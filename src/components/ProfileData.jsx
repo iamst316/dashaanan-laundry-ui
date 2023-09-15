@@ -1,11 +1,18 @@
 // import { useDispatch, useSelector } from "react-redux";
 
+import { useNavigate } from "react-router-dom";
 import sample from "../assets/img/profile/1.png"
 
 export default function(props) {
   // const loggedInUser = useSelector((state) => state.user);
 
   const { name, email, addresses } = props.user;
+  const navigate = useNavigate();
+
+  function Logout(){
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
 
   return (
     < div className="pdata-main" >
@@ -26,7 +33,7 @@ export default function(props) {
       ) : (
         <h2 class="missing-info">No Addresses ADDED!!!</h2>
       )}
-      <button>Logout</button>
+      <button onClick={Logout}>Logout</button>
       <img className="test" src={sample} />
     </div >
   )

@@ -6,3 +6,51 @@
     text-align: center;
     font-size: 1.3rem;
 }
+
+.spc{
+    cursor: pointer;
+}
+
+li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Added */
+
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0 7rem 0;
+    /* height: fit-content; */
+}
+
+.learn-more{
+    color: #4C5FD5;
+}
+
+footer>*{
+    color: #ffffff;
+    /* border: 2px dotted saddlebrown; */
+}
+ul{
+    margin-top: .75rem;
+}
+li{
+    /* text-align: left;     */
+    font-size: .87rem;
+    position: relative;
+    right: 2.5rem;
+    margin: .25rem 0 .25rem 0;
+
+}
+.end{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    /* margin-top: 3rem; */
+    position: relative;
+    top: 3.5rem;
+}
