@@ -38,7 +38,7 @@ export default function(){
             },
         ]
         
-        const apiUrl = 'http://localhost:4000/add-product';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/add-product';
 
         axios.post(apiUrl, newItem, { withCredentials: true })
             .then(response => {

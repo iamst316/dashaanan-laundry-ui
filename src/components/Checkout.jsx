@@ -27,7 +27,7 @@ export default function() {
     console.log("final: ",finalOrder)
 
     useEffect(() => {
-        fetch("http://localhost:4000/store")
+        fetch("https://dashaanan-laundry-server.onrender.com/store")
             .then((res) => res.json())
             .then((data) => {
                 setStore(data);
@@ -54,7 +54,7 @@ export default function() {
         finalOrder.orderStatus = "Not Delivered";
         finalOrder.orderDate = new Date();
         
-        const apiUrl = 'http://localhost:4000/order';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/order';
 
         axios.patch(apiUrl, finalOrder, { withCredentials: true })
             .then(response => {

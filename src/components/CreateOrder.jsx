@@ -85,7 +85,7 @@ export default function() {
   const navigate = useNavigate();
   //Side Effects
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("https://dashaanan-laundry-server.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

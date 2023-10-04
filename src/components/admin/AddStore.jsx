@@ -10,7 +10,7 @@ export default function(){
     function AddStore(e){
         e.preventDefault()
         
-        const apiUrl = 'http://localhost:4000/add-store';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/add-store';
 
         axios.post(apiUrl, newStore, { withCredentials: true })
             .then(response => {

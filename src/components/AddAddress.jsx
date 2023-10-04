@@ -19,7 +19,7 @@ export default function(){
 
         addForm.email = loggedInUser.email;
 
-        const apiUrl = 'http://localhost:4000/add-address';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/add-address';
 
         axios.patch(apiUrl, addForm, { withCredentials: true })
             .then(response => {

@@ -13,7 +13,7 @@ export default function() {
         e.preventDefault();
         console.log(registerForm);
 
-        const apiUrl = 'http://localhost:4000/signup';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/signup';
 
         axios.post(apiUrl, registerForm, { withCredentials: true })
             .then(response => {

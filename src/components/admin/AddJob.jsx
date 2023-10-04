@@ -10,7 +10,7 @@ export default function(){
     function AddJob(e){
         e.preventDefault();
         
-        const apiUrl = 'http://localhost:4000/add-job';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/add-job';
 
         axios.post(apiUrl, newJob, { withCredentials: true })
             .then(response => {

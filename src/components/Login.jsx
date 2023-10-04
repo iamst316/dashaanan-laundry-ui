@@ -18,7 +18,7 @@ export default function() {
     function HandleSubmit(e) {
         e.preventDefault();
 
-        const apiUrl = 'http://localhost:4000/login';
+        const apiUrl = 'https://dashaanan-laundry-server.onrender.com/login';
 
         axios.post(apiUrl, loginForm, { withCredentials: true })
             .then(response => {
