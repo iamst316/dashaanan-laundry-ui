@@ -19,7 +19,7 @@
     
 } */
 
-#about-us, #join-main{
+#about-us, .join-main{
     /* border: 2px solid red; */
     height: 50vh;
     padding: 8.2rem;
@@ -34,17 +34,30 @@
     text-align: center;
 }
 
-#join-btn{
+
+.join-main{
+    /* border: 2px solid red; */
+}
+.join-main div{
+    /* border: 2px solid dodgerblue; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.join-btn{
     width: 16.5rem;
     height: auto;
     font-size: 2.8rem;
     text-align: center;
-    margin-right: 2.5rem;
-    /*position: relative;*/
-    left: 17rem;
-    top: 4rem;
+    color: dodgerblue;
+    border: 2px solid dodgerblue;
+    border-radius: .5rem;
+    box-shadow: 3px 3px 3px dodgerblue;
+    transition: all .35s ease-in-out;
 }
 
-#join-btn:hover{
-    
+.join-btn:hover{
+    border: 2px solid rgb(218, 57, 218);
+    color: rgb(218, 57, 218);
+    box-shadow: -3px 3px 3px rgb(218, 57, 218);
 }

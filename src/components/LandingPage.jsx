@@ -21,10 +21,14 @@ export default function(){
 
 
         </div>
-        <div id="join-main">
+        <div className="join-main">
             <h1 id="join-title">Join Us</h1>
-            <button onClick={()=>navigate("/login")} id="join-btn">Login</button>
-            <button onClick={()=>navigate("/register")}  id="join-btn">Register</button>
+            <div>
+                <button onClick={()=>navigate("/login")} className="join-btn">Login</button>
+                
+                <button onClick={()=>navigate("/register")} className="join-btn">Register</button>
+            </div>
+            
         </div>
         <Footer />
     </div>)

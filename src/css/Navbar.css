@@ -1,11 +1,24 @@
 #navbar-main{
     display: flex;
+    padding: .5rem 0;
     align-items: flex-end;
     justify-content: flex-end;
+    background: linear-gradient(45deg, rgba(192,188,255,1) 0%, rgba(137,73,232,1) 67%);
+
 }
 
 #navbar-main *{
     margin-right: 25px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
+    color: antiquewhite;
+    font-weight: 700;
+    padding: .2rem .5rem;
+    border: 2px solid #ffffff00;
+    transition: all .3s ease-in-out;
+}
+
+#navbar-main *:hover{
+    border: 2px solid antiquewhite;
+    border-radius: .5rem;
 }

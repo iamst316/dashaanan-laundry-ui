@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../css/JobTemp.css'
 import plogo from '../assets/img/money.png'
 
-export default function(props){
+export default function(props) {
     const { title, location, closed, pay, department } = props.job;
     // const [status, isStatus] = useState();
 
@@ -17,8 +17,8 @@ export default function(props){
         </div>
         <div className='btns'>
             <button className='det-btn'>View Details</button>
-            {closed 
-                ? 
+            {closed
+                ?
                 <button disabled>Apply</button>
                 :
                 <button className='apply-btn'>Apply</button>

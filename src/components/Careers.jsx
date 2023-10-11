@@ -15,7 +15,7 @@ export default function(){
         });
     },[])
     return (
-        <>
+        <div className="careers">
             <Navbar />
             <div id="careers-main">
                 <h1 id="careers-title">Work with us?</h1>
@@ -29,7 +29,7 @@ export default function(){
                 </div>
                 
             </div>
-            {/* <Footer /> */}
-        </>
+            <Footer />
+        </div>
     )
 }

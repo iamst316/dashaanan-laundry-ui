@@ -1,16 +1,24 @@
 
+.careers{
+    display: flex;
+    flex-direction: column;
+}    
 #careers-main{
-    height: 50vh;
-    padding: 8.2rem;
+    /* height: 50vh; */
+    padding: 4.2rem 6.2rem;
 }
 
 #careers-title{
     text-align: center;
     font-size: 5.4rem;
+    /* border: 2px solid red; */
+    padding: 13rem 0;
+    
 }
 
 .job-area{
-    border: 2px dotted purple;
+    margin-top: 3rem;
+    /* border: 2px dotted purple; */
     display: flex;
     flex-flow: column wrap;
 }
@@ -25,4 +33,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .5rem .5rem;
+    /* border: 2px solid rgb(0, 128, 32); */
+
 }
