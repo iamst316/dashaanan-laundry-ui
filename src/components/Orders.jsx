@@ -4,6 +4,7 @@ import Footer from './Footer'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Order from './Order';
+import '../css/Orders.css'
 
 export default function() {
   useEffect(() => {
@@ -16,23 +17,18 @@ export default function() {
     }, interval);
   }, []);
 
-
   const loggedInUser = useSelector((state) => state.user);
+
   return (
-    <>
-      {/* <Navbar />
-      <SideNav /> */}
-      <div className='orders-main'>
-        {loggedInUser ? (
-          loggedInUser.orders.length > 0 ?
-            loggedInUser.orders.map((order) => {
-              return <Order info={order} />
-            }) : <h2 className='missing-info'>No Orders Placed!</h2>
-        ) : (
-          <h2 className='missing-info'>Please Login/Register to view your Orders</h2>
-        )}
-      </div>
-      {/* <Footer /> */}
-    </>
+    <div className='orders-main'>
+      {loggedInUser ? (
+        loggedInUser.orders.length > 0 ?
+          loggedInUser.orders.map((order) => {
+            return <Order info={order} />
+          }) : <h2 className='missing-info'>No Orders Placed!</h2>
+      ) : (
+        <h2 className='missing-info'>Please Login/Register to view your Orders</h2>
+      )}
+    </div>
   )
 }
