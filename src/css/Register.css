@@ -29,14 +29,22 @@
     /* justify-content: space-between; */
 }
 
+/* @media (max-width: 768px) { 
+
+    #register-area>form {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(9, 1fr);
+    }
+
+} */
+
 #register-area>form>*{
     height: 2.5rem;
 }
 
 #register-footer{
-    border: 2px solid gold;
-    /*position: relative;*/
-    /* top: 33.3rem; */
+    /* border: 2px solid gold; */
+    
 }
 
 .register-btn{
@@ -44,11 +52,11 @@
     margin: 0;
     grid-column-start: 1;
     grid-column-end: 3;
-    transition: all 1s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .register-btn:hover{
     border-radius: 5rem;   
     background-color: rgb(26, 228, 255); 
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }

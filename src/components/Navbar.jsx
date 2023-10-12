@@ -11,13 +11,13 @@ export default function() {
     }, [])
 
     return (<div id='navbar-main'>
-        <div onClick={() => navigate("/")} id="home-tab">Home</div>
-        <div onClick={() => navigate("/careers")} id="career-tab">Careers</div>
+        <div onClick={() => navigate("/")} className="tab">Home</div>
+        <div onClick={() => navigate("/careers")} className="tab">Careers</div>
         {auth != undefined ?
 
-            <div onClick={() => navigate("/profile")}>Profile</div> :
+            <div className="tab" onClick={() => navigate("/profile")}>Profile</div> :
 
-            <div onClick={() => navigate("/login")} id="login-tab">Login</div>
+            <div onClick={() => navigate("/login")} className="tab">Login</div>
         }
     </div>)
 }

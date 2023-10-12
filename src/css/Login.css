@@ -4,6 +4,7 @@
     margin: auto;
     width: 80%;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,15 +12,16 @@
 
 #login-area{
     border: 2px solid red;
-    /* margin: auto; */
     width:50%;
-    /*position: absolute;*/
     padding: 5rem;
+}
 
+#login-main, #login-area{
+    border-radius: 1rem;
 }
 
 form{
-    border: 2px solid slateblue;
+    /* border: 2px solid slateblue; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,10 +29,30 @@ form{
 
 form>*{
     height: 2.5rem;
+    border-radius: .5rem;
+}
+
+form button{
+    font-size: 1.2rem;
+    border: 2px solid black;
+}
+
+form button:hover{
+    /* width: 10%; */
 }
 
 #login-footer{
-    border: 2px solid gold;
+    /* border: 2px solid gold; */
     /*position: relative;*/
-    top: 33.3rem;
+    /* top: 33.3rem; */
+}
+
+input{
+    text-align: center;
+    font-size: 1.2rem;
+    border: 0;
+    margin-top: .5rem;
+}
+input::placeholder{
+    text-align: center;
 }

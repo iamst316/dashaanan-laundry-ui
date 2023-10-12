@@ -22,26 +22,27 @@ export default function() {
 
         axios.post(apiUrl, loginForm, { withCredentials: true })
             .then(response => {
-                // console.log('Response:', response.data);
                 const myCookieValue = Cookies.get("token");
                 localStorage.setItem("token", myCookieValue);
-                // console.log('COOKIE--->', localStorage.getItem("token"))
                 User.email = response.data.user.email;
                 User.name = response.data.user.name;
                 User.addresses = response.data.user.addresses;
                 User.orders = response.data.user.orders;
 
-                // console.log(response.data.user);
                 console.log("I LOGGED IN -->  ", User);
-
                 dispatch(setUser(User));
-                // console.log("1",loggedInUser);
+
+                if (User.email){
+                    navigate("/orders")
+                }
+                else{
+                    alert("Plase Enter Valid Credentials.")
+                }
             })
             .catch(error => {
                 console.error('Error:', error.message);
             });
 
-        navigate("/orders")
     }
     useEffect(() => {
         console.log("1", User);
@@ -58,7 +59,6 @@ export default function() {
                     <input type="email" placeholder="E-Mail" onChange={(e) => loginForm.email = e.target.value} />
                     <input type="password" placeholder="Password" onChange={(e) => loginForm.password = e.target.value} />
                     <button onClick={HandleSubmit} id="login-btn">Login</button>
-                    {/* <hr /> */}
                 </form>
                 <h4>Not a member? <button onClick={() => navigate("/register")}>Register</button></h4>
                 <h4>Login with google option</h4>
