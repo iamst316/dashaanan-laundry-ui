@@ -35,12 +35,16 @@ export default function(){
 
         navigate("/admin-home")
     }
-    // useEffect(() => {
-    //     console.log("1", User);
-    // }, [User])
 
     return(
         <div id="admin-main">
+            <div className="admin-login-title">
+            
+                <button className='go-back-btn' onClick={()=> navigate("/")}><img src="src/assets/img/left-arrow.png" /></button>
+
+                <h1>Admin Login</h1>
+
+            </div>
             <input type="text" onChange={(e)=> loginForm.codeName = e.target.value} placeholder='Admin Code Name'/>
             <input type="password" onChange={(e)=> loginForm.password = e.target.value} placeholder='Admin Password'/>
             <button id='admin-btn-login' onClick={HandleLogin}>Admin Login</button>

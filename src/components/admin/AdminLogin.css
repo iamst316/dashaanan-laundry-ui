@@ -35,3 +35,15 @@
     box-shadow: 1px 1px 4px yellow;
     color: blueviolet;
 }
+
+.admin-login-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+
+.admin-login-title h1{
+    margin-right: 10.5rem;
+}
+
