@@ -4,16 +4,21 @@ import Footer from './Footer'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Order from './Order';
-import '../css/Orders.css'
+import '../css/Orders.css';
+import { useHistory } from 'react-router-dom';
 
 export default function() {
+  const history = useHistory();
   useEffect(() => {
     const interval = 30 * 60 * 1000;
 
     const timer = setTimeout(() => {
       localStorage.removeItem("token")
       console.log('Item removed from localStorage.');
+      history.push("/login");
     }, interval);
+
+    return clearTimeout(timer);
   }, []);
 
   const loggedInUser = useSelector((state) => state.user);
