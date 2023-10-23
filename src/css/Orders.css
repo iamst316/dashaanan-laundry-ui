@@ -1,0 +1,9 @@
+.orders-main{
+    border: 2px solid dodgerblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}

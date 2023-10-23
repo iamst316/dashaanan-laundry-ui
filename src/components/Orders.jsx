@@ -9,7 +9,6 @@ import '../css/Orders.css'
 export default function() {
   useEffect(() => {
     const interval = 30 * 60 * 1000;
-    // const interval = 10*1000;
 
     const timer = setTimeout(() => {
       localStorage.removeItem("token")
@@ -18,6 +17,7 @@ export default function() {
   }, []);
 
   const loggedInUser = useSelector((state) => state.user);
+  console.log(loggedInUser);
 
   return (
     <div className='orders-main'>

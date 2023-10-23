@@ -21,12 +21,14 @@ export default function() {
                 const myCookieValue = Cookies.get("token");
 
                 localStorage.setItem("token", myCookieValue);
+
+                navigate("/orders")
             })
             .catch(error => {
                 console.error('Error:', error.message);
             });
 
-        navigate("/orders")
+//         navigate("/orders")
     }
     useEffect(() => {
 

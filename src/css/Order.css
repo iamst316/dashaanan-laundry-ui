@@ -1,0 +1,15 @@
+.order-entry{
+    border: 2px solid lime;
+    margin: 0.35rem;
+    padding: .25rem;
+    border-radius: .25rem;
+    box-shadow: 2px 2px 15px rgb(0, 15, 0);
+}
+
+
+.items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2px;
+    row-gap: 1px;
+}
