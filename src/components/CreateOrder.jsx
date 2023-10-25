@@ -18,6 +18,7 @@ import sTowel from "../assets/img/wash-btn/selected/towel.svg";
 import uTowel from "../assets/img/wash-btn/unselected/towel.svg";
 import sBleach from "../assets/img/wash-btn/selected/bleach.svg";
 import uBleach from "../assets/img/wash-btn/unselected/bleach.svg";
+
 //images-end
 
 import { useEffect, useState } from "react";

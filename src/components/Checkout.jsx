@@ -32,6 +32,7 @@ export default function() {
             .then((data) => {
                 setStore(data);
             });
+            
         let sum = 0;
         for (let i of current.currentOrder) {
             sum += i.total;

@@ -5,17 +5,17 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Order from './Order';
 import '../css/Orders.css';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function() {
-  const history = useHistory();
+  const navigate = useNavigate();
   useEffect(() => {
     const interval = 30 * 60 * 1000;
 
     const timer = setTimeout(() => {
       localStorage.removeItem("token")
       console.log('Item removed from localStorage.');
-      history.push("/login");
+      navigate("/login");
     }, interval);
 
     return clearTimeout(timer);
