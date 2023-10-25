@@ -54,6 +54,13 @@ export default function() {
         finalOrder.email = loggedInUser.email;
         finalOrder.orderStatus = "Not Delivered";
         finalOrder.orderDate = new Date();
+        finalOrder.items = current.currentOrder;
+
+        for (let i of current.currentOrder){
+            if (i.addOn[0]){
+                
+            }
+        }
         
         const apiUrl = 'https://dashaanan-laundry-server.onrender.com/order';
 
@@ -70,8 +77,6 @@ export default function() {
 
     return (
         <>
-            <Navbar />
-            <SideNav />
             <div id="checkout-main">
                 <p id="checkout-title">Checkout</p>
                 <div id="checkout-area">
@@ -143,7 +148,6 @@ export default function() {
                     <button onClick={OrderFinally}>Pay</button>
                 </div>
             </div >
-            <Footer />
         </>
     );
 }

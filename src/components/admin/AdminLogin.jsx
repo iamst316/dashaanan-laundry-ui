@@ -17,17 +17,6 @@ export default function(){
                 console.log('Response:', response);
                 const myCookieValue = Cookies.get("token");
                 localStorage.setItem("token", myCookieValue);
-                // console.log('COOKIE--->', localStorage.getItem("token"))
-                // User.email = response.data.user.email;
-                // User.name = response.data.user.name;
-                // User.addresses = response.data.user.addresses;
-                // User.orders = response.data.user.orders;
-
-                // console.log(response.data.user);
-                // console.log("I LOGGED IN -->  ", User);
-
-                // dispatch(setUser(User));
-                // console.log("1",loggedInUser);
             })
             .catch(error => {
                 console.error('Error:', error.message);
