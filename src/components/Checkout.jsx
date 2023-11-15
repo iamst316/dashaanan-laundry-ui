@@ -23,8 +23,8 @@ export default function() {
     const current = useSelector(state=>state.order)
     
 
-    console.log(current)
-    console.log("final: ",finalOrder)
+    // console.log(current)
+    // console.log("final: ",finalOrder)
 
     useEffect(() => {
         fetch("https://dashaanan-laundry-server.onrender.com/store")
@@ -51,6 +51,7 @@ export default function() {
     
     function OrderFinally(e){
         e.preventDefault();
+        
         finalOrder.email = loggedInUser.email;
         finalOrder.orderStatus = "Not Delivered";
         finalOrder.orderDate = new Date();
@@ -63,6 +64,7 @@ export default function() {
         }
         
         const apiUrl = 'https://dashaanan-laundry-server.onrender.com/order';
+        console.log("going-->",finalOrder)
 
         axios.patch(apiUrl, finalOrder, { withCredentials: true })
             .then(response => {
@@ -82,8 +84,7 @@ export default function() {
                 <div id="checkout-area">
                     <select
                         onChange={(e) => {
-                            setSelected(stores[e.target.value]);
-                            
+                            setSelected(stores[e.target.value]);  
                         }}
                     >
                         <option disabled selected value>
@@ -105,7 +106,7 @@ export default function() {
                         {current.currentOrder.map((row) => {
                             return (
                                 <div id="row">
-                                    <p id="item-name">{row.name}</p>
+                                    <p id="item-name">{row.productName}</p>
                                     <div id="wash-options">
                                         {row.addOn[0] && <p>Washing </p>}
                                         {row.addOn[1] && <p>Ironing </p>}

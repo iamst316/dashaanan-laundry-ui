@@ -16,9 +16,7 @@ export default function(props) {
           <div>Name: {item.productName}</div>
           <div>Quantity: {item.quantity}</div>
           <div className="add-on">
-            {washType.map((wash)=>{
-              return <div>{wash}</div>
-            })}
+            
           </div>
           <div className="total">Total: {item.total}</div>
         </div>

@@ -140,7 +140,7 @@ export default function() {
   }
   function AddItem(idx) {
     let itemEntry = {};
-    itemEntry.name = products[idx].productName;
+    itemEntry.productName = products[idx].productName;
     itemEntry.total = (products[idx].price + addOnPrice[idx]) * quantArr[idx];
     itemEntry.addOn = [isWash[idx], isIron[idx], isBleach[idx], isTowel[idx]]; //code - wibt
     itemEntry.quantity = quantArr[idx];
@@ -158,7 +158,7 @@ export default function() {
 
   function RemoveItem(idx) {
     for (let i = 0; i < itemSummary.length; i++) {
-      if (itemSummary[i].name == products[idx].productName) {
+      if (itemSummary[i].productName == products[idx].productName) {
         setItemSummary([
           ...itemSummary.slice(0, i),
           ...itemSummary.slice(i + 1, 6),

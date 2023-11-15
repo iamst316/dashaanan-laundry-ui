@@ -8,7 +8,6 @@ const PrivateRoute = (props) => {
   const navigate = useNavigate();
   const {Component} = props;
   const auth = localStorage.getItem("token");
-
   useEffect(()=>{
   
     if(!auth){
