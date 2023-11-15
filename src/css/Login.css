@@ -25,21 +25,28 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
-form>*{
+form input{
     height: 2.5rem;
+    width: 90%;
+    border: 2px solid grey;
     border-radius: .5rem;
 }
 
 form button{
+    width: 50%;
     font-size: 1.2rem;
     border: 2px solid black;
 }
 
-form button:hover{
-    /* width: 10%; */
+form img{
+    width: 3rem;
+    aspect-ratio: 1/1;
 }
+
+
 
 #login-footer{
     /* border: 2px solid gold; */

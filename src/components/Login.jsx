@@ -7,6 +7,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/slices/userSlice";
+import spinner from '../assets/img/spinner.svg';
 
 export default function() {
     const [loginForm, fillForm] = useState({});
@@ -14,9 +15,11 @@ export default function() {
     // const loggedInUser = useSelector((state) => state.user.loggedInUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [showLoadingImg, setLoadingImage] = useState(false);
 
     function HandleSubmit(e) {
         e.preventDefault();
+        setLoadingImage(true);
 
         const apiUrl = 'https://dashaanan-laundry-server.onrender.com/login';
 
@@ -58,10 +61,13 @@ export default function() {
                 <form onSubmit={(e) => HandleSubmit(e)}>
                     <input type="email" placeholder="E-Mail" onChange={(e) => loginForm.email = e.target.value} />
                     <input type="password" placeholder="Password" onChange={(e) => loginForm.password = e.target.value} />
-                    <button onClick={HandleSubmit} id="login-btn">Login</button>
+                    {showLoadingImg ? <img src={spinner}/> : <button onClick={HandleSubmit} id="login-btn">Login</button>}
+                    
                 </form>
                 <h4>Not a member? <button onClick={() => navigate("/register")}>Register</button></h4>
                 <h4>Login with google option</h4>
+                
+
 
             </div>
 
