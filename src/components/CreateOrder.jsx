@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import SideNav from "./SideNav";
 import "../css/CreateOrder.css";
 
+
 //images
 import jeans from "../assets/img/products/jeans.svg";
 import shirt from "../assets/img/products/shirt.svg";
@@ -18,6 +19,8 @@ import sTowel from "../assets/img/wash-btn/selected/towel.svg";
 import uTowel from "../assets/img/wash-btn/unselected/towel.svg";
 import sBleach from "../assets/img/wash-btn/selected/bleach.svg";
 import uBleach from "../assets/img/wash-btn/unselected/bleach.svg";
+import plus from "../assets/img/plus.svg";
+import minus from "../assets/img/minus.svg";
 
 //images-end
 
@@ -184,8 +187,7 @@ export default function() {
 
   return (
     <>
-      {/* <Navbar />
-      <SideNav /> */}
+      
       <div id="create-order-main">
         <p id="create-title">Create Order</p>
         <p id="create-description">
@@ -206,17 +208,22 @@ export default function() {
                   <p id="item-description">{item.description}</p>
                 </div>
 
-                <input
-                  type="number"
-                  onChange={(e) =>
-                    setQuant([
-                      ...quantArr.slice(0, item.iconurl),
-                      e.target.value,
-                      ...quantArr.slice(item.iconurl + 1, 6),
-                    ])
-                  }
-                  id="item-quant"
-                />
+                <div className="input-section">
+                  <button><img src={minus} /></button>
+                  <input
+                    type="number"
+                    onChange={(e) =>
+                      setQuant([
+                        ...quantArr.slice(0, item.iconurl),
+                        e.target.value,
+                        ...quantArr.slice(item.iconurl + 1, 6),
+                      ])
+                    }
+                    id="item-quant"
+                  />
+                  <button><img src={plus} /></button>
+                </div>
+                
 
                 <span id="wash-btns">
                   {!isWash[item.iconurl] ? (
