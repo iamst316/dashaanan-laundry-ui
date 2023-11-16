@@ -209,7 +209,14 @@ export default function() {
                 </div>
 
                 <div className="input-section">
-                  <button><img src={minus} /></button>
+                  <button onClick={()=>{
+                    setQuant([
+                      ...quantArr.slice(0, item.iconurl),
+                      quantArr[item.iconurl] -1,
+                      ...quantArr.slice(item.iconurl + 1, 6),
+                    ])
+                  }}><img src={minus} /></button>
+                  
                   <input
                     type="number"
                     onChange={(e) =>
@@ -219,9 +226,17 @@ export default function() {
                         ...quantArr.slice(item.iconurl + 1, 6),
                       ])
                     }
+                    value={quantArr[item.iconurl]}
                     id="item-quant"
                   />
-                  <button><img src={plus} /></button>
+
+                  <button onClick={()=>{
+                    setQuant([
+                      ...quantArr.slice(0, item.iconurl),
+                      quantArr[item.iconurl] + 1,
+                      ...quantArr.slice(item.iconurl + 1, 6),
+                    ])
+                  }}><img src={plus} /></button>
                 </div>
                 
 
