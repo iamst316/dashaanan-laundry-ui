@@ -19,7 +19,7 @@
 }
 
 #register-area>form{
-    border: 2px solid slateblue;
+    /* border: 2px solid slateblue; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: .5rem;

@@ -2,15 +2,32 @@ import '../css/LandingPage.css'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { useNavigate } from 'react-router-dom'
+import gsap from 'gsap';
+import { useRef,useEffect } from 'react';
 
 export default function(){
     const navigate = useNavigate();
+    const staticRef = useRef();
+    const dynamicRef = useRef();
 
+    useEffect(()=>{
+        gsap.from(staticRef.current,{
+            x:-200,
+            duration:2,
+        })
+
+        gsap.from(dynamicRef.current,{
+            x:200,
+            duration:1,
+
+        })
+    },[])
     return(<div id='landing-main'>
         <Navbar />
         <div id='titles'>
-            <h1 id='static-title'>Welcome To</h1>
-            <h1 id='dynamic-title'>Dashaanan Laundry</h1>
+            <h1 ref={staticRef} id='static-title'>Welcome To</h1>
+
+            <h1 ref={dynamicRef} id='dynamic-title'>Dashaanan Laundry</h1>
         </div>
 
         <div id="about-us">
