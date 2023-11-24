@@ -1,8 +1,4 @@
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import SideNav from "./SideNav";
 import "../css/CreateOrder.css";
-
 
 //images
 import jeans from "../assets/img/products/jeans.svg";
@@ -57,7 +53,8 @@ export default function() {
     false,
     false,
   ]);
-  const [isTowel, setTowel] = useState([
+  const [isTowel, setTowel] =
+  useState([
     false,
     false,
     false,
@@ -111,6 +108,7 @@ export default function() {
     console.log(billTotal);
   }, [billTotal]);
   // console.log(products);
+
   //side effects end
 
   function ToggleWash(idx) {
