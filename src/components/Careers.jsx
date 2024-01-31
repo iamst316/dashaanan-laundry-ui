@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react"
 export default function(){
     const [jobs, setJobs] = useState([]);
     const scrollRef = useRef();
+
     useEffect(()=>{
         fetch("https://dashaanan-laundry-server.onrender.com/jobs")
         .then((res) => res.json())
